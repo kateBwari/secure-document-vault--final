@@ -11,6 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @RestController
 @RequestMapping("/file")
@@ -88,5 +91,22 @@ public class FileController {
             return ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
         }
         return "unknown";
+    }
+    @GetMapping("/all")
+    public ResponseEntity<ApiResponse<List<String>>> getAllFiles(@AuthenticationPrincipal Object principal) {
+        String username = getUsernameFromPrincipal(principal); // Reuse your existing helper
+
+        // Logic to get all files from the user's specific folder
+        File userFolder = new File(System.getProperty("user.dir") + File.separator + "uploads" + File.separator + username);
+
+        List<String> fileList = new ArrayList<>();
+        if (userFolder.exists() && userFolder.isDirectory()) {
+            String[] files = userFolder.list();
+            if (files != null) {
+                fileList = Arrays.asList(files);
+            }
+        }
+
+        return ResponseEntity.ok(new ApiResponse<>("Success", "Files retrieved for " + username, fileList));
     }
 }
