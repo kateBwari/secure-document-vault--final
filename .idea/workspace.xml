@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45994916-628f-4ddf-a4e5-a72a7c8a95f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02api-gatewayservice/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02api-gatewayservice/src/main/java/org/example/_02apigatewayservice/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/model/CustomUserDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/model/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04auth-service/src/main/java/org/example/_04authservice/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05file-service/src/main/java/org/example/_5fileservice/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05file-service/src/main/java/org/example/_5fileservice/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/05file-service/src/main/java/org/example/_5fileservice/service/FileStorageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +102,11 @@
       </method>
     </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="04auth-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example._04authservice.AuthServiceApplication" />
+      <module name="03auth-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example._03authservice.AuthServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example._04authservice.*" />
+          <option name="PATTERN" value="org.example._03authservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,11 +128,11 @@
       </method>
     </configuration>
     <configuration name="FileServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="05file-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example._5fileservice.FileServiceApplication" />
+      <module name="04file-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example._04fileservice.FileServiceApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example._5fileservice.*" />
+          <option name="PATTERN" value="org.example._04fileservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -196,7 +179,7 @@
       <workItem from="1770904890311" duration="4000" />
       <workItem from="1770961108937" duration="23712000" />
       <workItem from="1771218996045" duration="27642000" />
-      <workItem from="1771305501194" duration="6253000" />
+      <workItem from="1771305501194" duration="7626000" />
     </task>
     <servers />
   </component>
@@ -207,14 +190,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/05file-service/src/main/java/org/example/_5fileservice/FileServiceApplication.java</url>
+          <url>file://$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/FileServiceApplication.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/05file-service/src/main/java/org/example/_5fileservice/FileServiceApplication.java</url>
+          <url>file://$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/FileServiceApplication.java</url>
           <line>8</line>
-          <properties class="org.example._5fileservice.FileServiceApplication" method="main">
+          <properties class="org.example._04fileservice.FileServiceApplication" method="main">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
