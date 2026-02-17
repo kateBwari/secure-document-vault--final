@@ -1,0 +1,40 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: file-service
+          uri: lb://FILE-SERVICE
+          predicates:
+            - Path=/file/**
+          filters:
+            - TokenRelay=  # This passes the JWT from the user to the File Service
+        - id: auth-service
+          uri: lb://AUTH-SERVICE  # This name must match spring.application.name in your Auth Service
+          predicates:
+            - Path=/auth/**
+          filters:
+                - AddRequestHeader=X-Gateway-Origin, True
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # This tells the gateway to validate locally using the secret
+          jws-algorithms: HS256
+          # Your secret string goes here
+          secret-key-value: "ThisIsASecretKeyThatIsExactlySixtyFourCharactersLongToFixTheError"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: "*"
