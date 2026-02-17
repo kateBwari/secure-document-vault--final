@@ -2,15 +2,9 @@ package org.example._04fileservice.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -23,15 +17,15 @@ import java.nio.file.StandardCopyOption;
 public class FileController {
 
     @PostMapping("/upload")
-    public ResponseEntity<String> uploadFile(
+    public ResponseEntity<ApiResponse<String>> uploadFile(
             @RequestParam("file") MultipartFile file,
+            @RequestParam("file_name") String customName,
             @AuthenticationPrincipal Object principal) {
 
         String username = getUsernameFromPrincipal(principal);
 
-        // Security check: don't allow upload if user is unknown
         if (username.equals("unknown")) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid User Token");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new ApiResponse<>("Error","Invalid User Token", null));
         }
 
         String uploadPath = System.getProperty("user.dir") + File.separator + "uploads" + File.separator + username;
@@ -42,48 +36,56 @@ public class FileController {
                 userFolder.mkdirs();
             }
 
-            Path destination = Paths.get(uploadPath).resolve(file.getOriginalFilename());
+            Path destination = Paths.get(uploadPath).resolve(customName + ".png");
             Files.copy(file.getInputStream(), destination, StandardCopyOption.REPLACE_EXISTING);
 
-            return ResponseEntity.ok("File saved successfully in folder: " + username);
+            return ResponseEntity.ok(new ApiResponse<>("Success","File saved successfully in folder",customName + ".png"));
 
         } catch (IOException e) {
-            return ResponseEntity.internalServerError().body("Failed to upload file: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ApiResponse<>("Failed","Failed to upload file: " + e.getMessage(),null));
         }
     }
 
     @DeleteMapping("/{fileName}")
-    public ResponseEntity<String> deleteFile(
+    public ResponseEntity<ApiResponse<String>> deleteFile(
             @PathVariable String fileName,
             @AuthenticationPrincipal Object principal) {
 
+        // Fixed: Called locally without 'service.' prefix
         String username = getUsernameFromPrincipal(principal);
         String uploadPath = System.getProperty("user.dir") + File.separator + "uploads" + File.separator + username;
-        File fileToDelete = new File(uploadPath + File.separator + fileName);
+
+        // Fixed: Added .png so the file can be found on disk
+        System.out.println("DEBUG: Trying to delete file at: " + uploadPath + File.separator + fileName + ".png");
+        File fileToDelete = new File(uploadPath + File.separator + fileName + ".png");
 
         if (fileToDelete.exists()) {
             if (fileToDelete.delete()) {
-                return ResponseEntity.ok("File deleted successfully");
+                return ResponseEntity.ok(new ApiResponse<>("Success","File deleted successfully", "filename"));
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body( new ApiResponse<>("Failed","Could not delete file","fileName"));
             }
-            return ResponseEntity.internalServerError().body("Could not delete file from disk");
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File not found in " + username + "'s folder");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ApiResponse<>("Failed","File not found in Folder", username + "'s folder"));
     }
 
     @PutMapping("/{fileName}")
-    public ResponseEntity<String> updateFile(
+    public ResponseEntity<ApiResponse<String>> updateFile(
             @PathVariable String fileName,
             @RequestParam("file") MultipartFile file,
+            @RequestParam("file_name") String newCustomName,
             @AuthenticationPrincipal Object principal) {
 
-        // uploadFile uses REPLACE_EXISTING, so it works as an update
-        return uploadFile(file, principal);
+        // Fixed: Passing 'newCustomName' to match the variable above
+        return uploadFile(file, newCustomName, principal);
     }
+
+    // Helper method to extract username from JWT
     private String getUsernameFromPrincipal(Object principal) {
-        if (principal instanceof JwtAuthenticationToken jwtToken) {
-            return jwtToken.getTokenAttributes().get("sub").toString();
-        } else if (principal instanceof Jwt jwt) {
-            return jwt.getClaimAsString("sub");
+        if (principal instanceof org.springframework.security.oauth2.jwt.Jwt) {
+            return ((org.springframework.security.oauth2.jwt.Jwt) principal).getClaimAsString("sub");
+        } else if (principal instanceof org.springframework.security.core.userdetails.UserDetails) {
+            return ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
         }
         return "unknown";
     }

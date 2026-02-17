@@ -30,19 +30,20 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody User user) {
+    public ResponseEntity<ApiResponse<String>> register(@RequestBody User user) {
         // 1. Check if user already exists
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
-            return ResponseEntity.badRequest().body("Username already taken");
+            return ResponseEntity.badRequest().body(new ApiResponse<>("Error","Username already taken",null));
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         // 3. Save the new user to the database
         userRepository.save(user);
 
-        return ResponseEntity.ok("User registered successfully");}
+        return ResponseEntity.ok(new ApiResponse<>("Success","User registered successfully","User.getUsername"));
+    }
         @PostMapping("/login")
-        public ResponseEntity<?> login(@RequestBody User loginRequest)
+        public ResponseEntity<ApiResponse<String>> login(@RequestBody User loginRequest)
         {
             try {
                 // 1. Authenticate the user
@@ -64,16 +65,11 @@ public class AuthController {
                         .setExpiration(new Date(now + dayInMs))
                         .signWith(key, SignatureAlgorithm.HS256)
                         .compact();
-
-                // 3. Return the response in a Map
-                Map<String, String> response = new HashMap<>();
-                response.put("token", jwtToken);
-
-                return ResponseEntity.ok(response);
+                return ResponseEntity.ok(new ApiResponse<>("Success","Login successful",jwtToken));
 
             } catch (Exception e) {
                 e.printStackTrace();
-                return ResponseEntity.status(401).body("Invalid username or password");
+                return ResponseEntity.status(401).body(new ApiResponse<>("Error","Invalid username or password",null));
             }
         }
     }
