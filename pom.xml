@@ -21,8 +21,8 @@
     <modules>
         <module>01discovery-server</module>
         <module>02api-gatewayservice</module>
-        <module>04auth-service</module>
-        <module>05file-service</module>
+        <module>03auth-service</module>
+        <module>04file-service</module>
     </modules>
 
     <dependencyManagement>
