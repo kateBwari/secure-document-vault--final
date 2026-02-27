@@ -3,6 +3,7 @@ package org.example._03authservice.controller;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.validation.Valid;
 import org.example._03authservice.model.User;
 import org.example._03authservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<ApiResponse<String>> register(@RequestBody User user) {
+    public ResponseEntity<ApiResponse<String>> register(@Valid @RequestBody User user) {
         // 1. Check if user already exists
         if (userRepository.findByUsername(user.getUsername()).isPresent()) {
             return ResponseEntity.badRequest().body(new ApiResponse<>("Error","Username already taken",null));
@@ -40,7 +41,7 @@ public class AuthController {
         // 3. Save the new user to the database
         userRepository.save(user);
 
-        return ResponseEntity.ok(new ApiResponse<>("Success","User registered successfully","User.getUsername"));
+        return ResponseEntity.ok(new ApiResponse<>("Success","User registered successfully",user.getUsername()));
     }
         @PostMapping("/login")
         public ResponseEntity<ApiResponse<String>> login(@RequestBody User loginRequest)

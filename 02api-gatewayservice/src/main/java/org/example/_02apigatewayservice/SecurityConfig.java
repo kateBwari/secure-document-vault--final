@@ -31,7 +31,7 @@ import javax.crypto.spec.SecretKeySpec;
                 .authorizeExchange(exchanges -> exchanges
                         // Allow registration and login without a token
                         .pathMatchers("/auth/register", "/auth/login", "/auth/**").permitAll()
-
+                        .pathMatchers("/files/download/**").permitAll()
                         // Protect everything else (including your file uploads)
                         .anyExchange().authenticated()
                 )

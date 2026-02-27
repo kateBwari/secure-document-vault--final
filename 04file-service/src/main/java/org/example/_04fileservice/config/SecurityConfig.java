@@ -1,6 +1,7 @@
 package org.example._04fileservice.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -19,6 +20,8 @@ public class  SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // The Servlet version uses .requestMatchers()
+                        .requestMatchers("/files/download/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth -> oauth
@@ -26,12 +29,15 @@ public class  SecurityConfig {
                 )
                 .build();
     }
-        @Bean
-        public JwtDecoder jwtDecoder() {
-            // This MUST match the 'key' you used in your Auth Service
-            String secret = "ThisIsASecretKeyThatIsExactlySixtyFourCharactersLongToFixTheError";
-            SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
-            return NimbusJwtDecoder.withSecretKey(secretKey).build();
-        }
+    @Bean
+    @Primary // This tells Spring to use THIS decoder for your JWTs
+    public JwtDecoder jwtDecoder() {
+        String secret = "ThisIsASecretKeyThatIsExactlySixtyFourCharactersLongToFixTheError";
+        SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes(), "HmacSHA256");
+        return NimbusJwtDecoder.withSecretKey(secretKey).build();
     }
+}
+
+
+
 

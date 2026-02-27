@@ -5,9 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45994916-628f-4ddf-a4e5-a72a7c8a95f5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/db-forest-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/model/FileMetadata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/repository/FileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02api-gatewayservice/src/main/java/org/example/_02apigatewayservice/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/02api-gatewayservice/src/main/java/org/example/_02apigatewayservice/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/02api-gatewayservice/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/02api-gatewayservice/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/03auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04file-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/04file-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/joycemoraa/test3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/joycemoraa/test4.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/joycemoraa/test4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/service/FileStorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/service/FileStorageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04file-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/04file-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,55 +43,65 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="39TQlTDO8SYw8xCof7Q8EOnGEFs" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.01discovery-server [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.01discovery-server [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.03username-file-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.03username-file-service [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.04auth-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.04auth-service [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.secure-document-vault [clean].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryServerApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DiscoveryServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.FileServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UsernameApplication (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UsernameApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.01discovery-server [clean].executor": "Run",
+    "Maven.01discovery-server [install].executor": "Run",
+    "Maven.03username-file-service [clean].executor": "Run",
+    "Maven.03username-file-service [install].executor": "Run",
+    "Maven.04auth-service [clean].executor": "Run",
+    "Maven.04auth-service [install].executor": "Run",
+    "Maven.04file-service [clean].executor": "Run",
+    "Maven.secure-document-vault [clean].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.AuthServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryServerApplication (1).executor": "Run",
+    "Spring Boot.DiscoveryServerApplication.executor": "Run",
+    "Spring Boot.FileServiceApplication.executor": "Run",
+    "Spring Boot.UsernameApplication (1).executor": "Run",
+    "Spring Boot.UsernameApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/catherine.bwari/Desktop/secure-document-vault/uploads",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\catherine.bwari\Desktop\secure-document-vault\uploads" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -141,15 +165,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsernameApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="03username-file-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example._3usernamefileservice.UsernameApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Spring Boot.UsernameApplication" />
       <item itemvalue="Spring Boot.ApiGatewayApplication" />
       <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.DiscoveryServerApplication" />
@@ -157,8 +173,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.FileServiceApplication" />
         <item itemvalue="Spring Boot.AuthServiceApplication" />
+        <item itemvalue="Spring Boot.FileServiceApplication" />
         <item itemvalue="Spring Boot.ApiGatewayApplication" />
         <item itemvalue="Spring Boot.DiscoveryServerApplication" />
       </list>
@@ -180,7 +196,16 @@
       <workItem from="1770904890311" duration="4000" />
       <workItem from="1770961108937" duration="23712000" />
       <workItem from="1771218996045" duration="27642000" />
-      <workItem from="1771305501194" duration="25830000" />
+      <workItem from="1771305501194" duration="26649000" />
+      <workItem from="1771391748656" duration="4212000" />
+      <workItem from="1771478575686" duration="3300000" />
+      <workItem from="1771564501595" duration="1629000" />
+      <workItem from="1771603270883" duration="680000" />
+      <workItem from="1771673268286" duration="811000" />
+      <workItem from="1771825305378" duration="1524000" />
+      <workItem from="1771827098328" duration="1249000" />
+      <workItem from="1771831143826" duration="7021000" />
+      <workItem from="1772023451628" duration="3943000" />
     </task>
     <servers />
   </component>
@@ -195,14 +220,15 @@
           <line>11</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/04file-service/src/main/java/org/example/_04fileservice/FileServiceApplication.java</url>
-          <line>8</line>
-          <properties class="org.example._04fileservice.FileServiceApplication" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/model/User.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/03auth-service/src/main/java/org/example/_03authservice/AuthServiceApplication.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

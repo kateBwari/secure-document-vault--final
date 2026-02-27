@@ -9,7 +9,7 @@ spring:
         - id: file-service
           uri: lb://FILE-SERVICE
           predicates:
-            - Path=/file/**
+            - Path=/files/**
           filters:
             - TokenRelay=  # This passes the JWT from the user to the File Service
         - id: auth-service
